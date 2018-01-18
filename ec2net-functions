@@ -177,7 +177,7 @@ rewrite_primary() {
     iface ${INTERFACE} inet6 dhcp
     post-up ip route add default via ${gateway} dev ${INTERFACE} table ${RTABLE}
     post-up ip route add default via ${gateway} dev ${INTERFACE} metric ${RTABLE}
-    post-up ip route add default gw ip-${gateway//./-} ${INTERFACE}
+    post-up route add default gw ip-${gateway//./-} ${INTERFACE}
 EOF
   # Use broadcast address instead of unicast dhcp server address.
   # Works around an issue with two interfaces on the same subnet.
